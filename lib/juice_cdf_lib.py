@@ -31,6 +31,13 @@ def juice_gethk_hf(data):
 
     hk = struct()
     hk.epoch = data['Epoch'][...]
+    hk.deploy_pri_x=data['LWT0332E']
+    hk.deploy_red_x=data['LWT0332F']
+    hk.deploy_pri_y=data['LWT03330']
+    hk.deploy_red_y=data['LWT03331']
+    hk.deploy_pri_z=data['LWT03332']
+    hk.deploy_red_z=data['LWT03333']
+    hk.deploy_lock_stat=data['LWT03334']
     hk.temp_rwi_u = data['LWT03337_CALIBRATED'][...]
     hk.temp_rwi_w = data['LWT03339_CALIBRATED'][...]
     hk.temp_hf_fpga = data['LWT0333B_CALIBRATED'][...]
