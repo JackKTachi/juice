@@ -6,8 +6,7 @@ import datetime
 # ---------------------------------------------------------
 # Load NAIF SPICE kernels for S/C
 # ---------------------------------------------------------
-
-def spice_ini(source_dir):
+def spice_ini(source_dir='C:/share/Linux/doc/spice/juice/kernels/'):
 
     # load spice kernel files
     spice.furnsh(source_dir + 'spk/juice_crema_5_1_150lb_23_1_v01.bsp')

@@ -4,7 +4,7 @@ import spiceypy as spice
 
 import sys
 sys.path.append('../lib')
-import juice_lib
+import juice_spice_lib as juice_lib
 
 # SPICE test
 spice.tkvrsn('TOOLKIT')
