@@ -283,3 +283,39 @@ def juice_getspec_hf_sid02_highres_ver01(data):
     spec.Ew_power_high = Ew_power_high.reshape(n_set, n_step).transpose()
 
     return spec
+
+#---------------------------------------------------------------------
+def juice_getdata_hf_sid03(cdf):
+
+    spec = struct()
+
+    spec.epoch = cdf['Epoch'][...]
+    spec.scet = cdf['SCET'][...]
+    spec.frequency = cdf['frequency'][...]
+
+    spec.EuEu = cdf['EuEu'][...]
+    spec.EvEv = cdf['EvEv'][...]
+    spec.EwEw = cdf['EwEw'][...]
+
+    fill_value = -1e30 
+
+    idx = np.where(spec.EuEu == fill_value)
+    spec.EuEu[idx] = np.nan
+    idx = np.where(spec.EvEv == fill_value)
+    spec.EvEv[idx] = np.nan
+    idx = np.where(spec.EwEw == fill_value)
+    spec.EwEw[idx] = np.nan
+
+    idx = np.where(spec.frequency == fill_value)
+    idx = sorted(idx,reverse=True)
+
+    for index in idx:
+        del spec.frequency[index]
+        for row in spec.EuEu:
+            del row[index]
+        for row in spec.EvEv:
+            del row[index]
+        for row in spec.EwEw:
+            del row[index]
+
+    return spec
