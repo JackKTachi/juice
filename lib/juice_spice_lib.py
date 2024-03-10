@@ -13,7 +13,7 @@ def spice_ini(source_dir='C:/share/Linux/doc/spice/juice/kernels/'):
     spice.furnsh(source_dir + 'spk/jup365_19900101_20500101.bsp')
     spice.furnsh(source_dir + 'spk/de432s.bsp')
     spice.furnsh(source_dir + 'lsk/naif0012.tls')
-    spice.furnsh(source_dir + 'pck/pck00010.tpc')
+    spice.furnsh(source_dir + 'pck/pck00011.tpc')
 
     return
 

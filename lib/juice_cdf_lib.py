@@ -131,6 +131,7 @@ def juice_getspec_hf_sid02_ver01(data):
     index_1d = np.where(sweep_start_1d)
     index = np.where(data.sweep_start == 1)
     n = len(index_1d[0])
+    print("number of sweeps : ", n)
 
     epoch = []
     Eu_power = []
@@ -147,8 +148,11 @@ def juice_getspec_hf_sid02_ver01(data):
         elif index_len == len3:
             n_samp = n_samp3
         else:
+            print("invalid length : ", index_len)
+            print("skipped")
             continue
 
+        print("data length : ", n_samp)
         epoch.append(data.epoch[index[0][i]])
 
         Eu_i = np.array(Eu_i_1d[index_1d[0][i]:index_1d[0][i+1]])
@@ -197,7 +201,7 @@ def juice_getspec_hf_sid02_highres_ver01(data):
     n_step = 512        # number of sweep step (fixed for ver.1 SW SID2)
     n_samp1 = 32
     n_samp2 = 50
-    n_samp3 = 64
+    n_samp3 = 512
     len1 = n_step * n_samp1
     len2 = n_step * n_samp2
     len3 = n_step * n_samp3
@@ -214,6 +218,7 @@ def juice_getspec_hf_sid02_highres_ver01(data):
     index_1d = np.where(sweep_start_1d)
     index = np.where(data.sweep_start == 1)
     n = len(index_1d[0])
+    print("number of sweeps : ",n)
 
     epoch = []
 
@@ -231,8 +236,11 @@ def juice_getspec_hf_sid02_highres_ver01(data):
         elif index_len == len3:
             n_samp = n_samp3
         else:
+            print("invalid length : ", index_len)
+            print("skipped")
             continue
 
+        print("data length : ", n_samp)
         epoch.append(data.epoch[index[0][i]])
 
         Eu_i = np.array(Eu_i_1d[index_1d[0][i]:index_1d[0][i+1]])
