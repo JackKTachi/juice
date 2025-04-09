@@ -1,0 +1,4 @@
+.venv/
+src/erg_data/
+results/
+kernel/

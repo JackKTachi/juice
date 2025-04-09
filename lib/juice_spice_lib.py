@@ -9,11 +9,11 @@ import datetime
 def spice_ini(source_dir='C:/share/Linux/doc/spice/juice/kernels/'):
 
     # load spice kernel files
-    spice.furnsh(source_dir + 'spk/juice_crema_5_1_150lb_23_1_v01.bsp')
-    spice.furnsh(source_dir + 'spk/jup365_19900101_20500101.bsp')
-    spice.furnsh(source_dir + 'spk/de432s.bsp')
-    spice.furnsh(source_dir + 'lsk/naif0012.tls')
-    spice.furnsh(source_dir + 'pck/pck00011.tpc')
+    spice.furnsh(source_dir + 'juice_crema_5_1_150lb_23_1_v01.bsp')
+    spice.furnsh(source_dir + 'jup365_19900101_20500101.bsp')
+    spice.furnsh(source_dir + 'de440s.bsp')
+    spice.furnsh(source_dir + 'naif0012.tls')
+    spice.furnsh(source_dir + 'pck00011.tpc')
 
     return
 
